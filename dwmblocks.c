@@ -46,10 +46,11 @@ void getcmd(const Block *block, char *output)
 		return;
 	char c;
 	int i = strlen(block->icon);
-	fgets(output+i, CMDLENGTH-i, cmdf);
+	fgets(output+i, CMDLENGTH-(strlen(delim)+1), cmdf);
 	i = strlen(output);
-	if (delim != '\0' && --i)
-		output[i++] = delim;
+	if((i > 0) && block != &blocks[LENGTH(blocks) - 1])
+		strcat(output, delim);
+	i += strlen(delim);
 	output[i++] = '\0';
 	pclose(cmdf);
 }
@@ -92,8 +93,12 @@ int getstatus(char *str, char *last)
 {
 	strcpy(last, str);
 	str[0] = '\0';
-	for(int i = 0; i < LENGTH(blocks); i++)
+	for(int i = 0; i < LENGTH(blocks); i++) {
 		strcat(str, statusbar[i]);
+		if(i == LENGTH(blocks) - 1) {
+			strcat(str, " ");
+		}
+	}
 	str[strlen(str)-1] = '\0';
 	return strcmp(str, last);//0 if they are the same
 }
@@ -156,7 +161,7 @@ int main(int argc, char** argv)
 	for(int i = 0; i < argc; i++)
 	{	
 		if (!strcmp("-d",argv[i]))
-			delim = argv[++i][0];
+			delim = argv[++i];
 		else if(!strcmp("-p",argv[i]))
 			writestatus = pstdout;
 	}
