@@ -36,6 +36,23 @@ static char statusstr[2][256];
 static int statusContinue = 1;
 static void (*writestatus) () = setroot;
 
+// Removes all instances of the given character from the given string
+void remove_all(char *str, char to_remove)
+{
+	char *read = str;
+	char *write = str;
+	while (*read)
+	{
+		if (*read == to_remove)
+		{
+			read++;
+			*write = *read;
+		}
+		read++;
+		write++;
+	}
+}
+
 //opens process *cmd and stores output in *output
 void getcmd(const Block *block, char *output)
 {
@@ -47,6 +64,7 @@ void getcmd(const Block *block, char *output)
 	char c;
 	int i = strlen(block->icon);
 	fgets(output+i, CMDLENGTH-(strlen(delim)+1), cmdf);
+	remove_all(output, '\n');
 	i = strlen(output);
 	if((i > 0) && block != &blocks[LENGTH(blocks) - 1])
 		strcat(output, delim);
