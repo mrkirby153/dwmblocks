@@ -14,12 +14,13 @@ static const Block blocks[] = {
     // {"🌡", "sensors | awk '/^temp1:/{print $2}'",				5,		0},
 
     // {"", "~/bin/statusbar/clock",						5,		0},
-    {"", "~/.local/bin/statusbar/music", 3, 0},
+    {"", "~/.local/bin/statusbar/music", 3, 2},
     {"", "~/.local/bin/statusbar/memory", 30, 0},
     {"", "~/.local/bin/statusbar/cpu", 3, 0},
     {"", "~/.local/bin/statusbar/clock", 10, 0},
     {"", "~/.local/bin/statusbar/mail", 10, 0},
     {"", "~/.local/bin/statusbar/volume", 0, 10},
+    {"", "~/.local/bin/statusbar/internet", 30, 0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
