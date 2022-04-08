@@ -17,9 +17,11 @@ static const Block blocks[] = {
     {"", "~/.local/bin/statusbar/music", 3, 2},
     {"", "~/.local/bin/statusbar/memory", 30, 3},
     {"", "~/.local/bin/statusbar/cpu", 3, 4},
+    {"", "~/.local/bin/statusbar/gpu", 3, 8},
     {"", "~/.local/bin/statusbar/clock", 10, 5},
     {"", "~/.local/bin/statusbar/mail", 10, 6},
     {"", "~/.local/bin/statusbar/volume", 0, 10},
+    {"", "~/.local/bin/statusbar/updates", 60, 9 },
     {"", "~/.local/bin/statusbar/internet", 30, 7},
 };
 
