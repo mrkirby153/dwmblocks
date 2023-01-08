@@ -23,6 +23,7 @@ static const Block blocks[] = {
     {"", "~/.local/bin/statusbar/volume", 0, 10},
     {"", "~/.local/bin/statusbar/updates", 60, 9 },
     {"", "~/.local/bin/statusbar/mouse_battery", 30, 8},
+    {"", "~/.local/bin/statusbar/indicator_keys", 3, 11},
     {"", "~/.local/bin/statusbar/internet", 30, 7},
 };
 
