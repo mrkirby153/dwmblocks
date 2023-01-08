@@ -14,7 +14,7 @@ static const Block blocks[] = {
     // {"🌡", "sensors | awk '/^temp1:/{print $2}'",				5,		0},
 
     // {"", "~/bin/statusbar/clock",						5,		0},
-    {"", "~/.local/bin/statusbar/music", 3, 2},
+    {"", "~/.local/bin/statusbar/music", 1, 2},
     {"", "~/.local/bin/statusbar/memory", 30, 3},
     {"", "~/.local/bin/statusbar/cpu", 3, 4},
     {"", "~/.local/bin/statusbar/gpu", 3, 8},
